@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="d8a5f01e-0175-4c52-ac04-522882c73491" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="hyderabadexampleFlow" doc:id="0ef4b876-01c2-4023-ae4d-967a2d787523" >
+		<http:listener doc:name="Listener" doc:id="cae0b395-259d-4771-ae5a-c2b543aa2da8" config-ref="HTTP_Listener_config" path="/hyderabad"/>
+		<set-payload value="#[payload]" doc:name="Set Payload" doc:id="5daad749-7415-471f-aa23-1a9743a67e8d" />
+	</flow>
+</mule>
